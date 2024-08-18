@@ -55,15 +55,15 @@ Table whoCounts = table.xTabCounts("who");
 producing:
 
 ```java
-     Column: who      
- Category  |  Count  |
+   bush.csv summary   
+   who     |  Count  |
 ----------------------
-    zogby  |     45  |
-    upenn  |     10  |
- time.cnn  |     30  |
       fox  |     64  |
- newsweek  |     55  |
    gallup  |    119  |
+ newsweek  |     55  |
+ time.cnn  |     30  |
+    upenn  |     10  |
+    zogby  |     45  |
 ```
 
 ### Calculating Percents
@@ -85,15 +85,15 @@ whoPercents
 ```
 
 ```java
-       Column: who       
- Category  |  Percents  |
+    bush.csv summary     
+   who     |  Percents  |
 -------------------------
-    zogby  |       14%  |
-    upenn  |        3%  |
- time.cnn  |        9%  |
       fox  |       20%  |
- newsweek  |       17%  |
    gallup  |       37%  |
+ newsweek  |       17%  |
+ time.cnn  |        9%  |
+    upenn  |        3%  |
+    zogby  |       14%  |
 ```
 
 ### Table Percents

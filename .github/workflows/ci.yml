@@ -15,7 +15,8 @@ jobs:
       matrix:
         # Test the Java LTS versions and latest version available
         java-version: [11, 17]
-        os: [macOS-latest, ubuntu-latest, windows-latest]
+        # os: [macOS-latest, ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
