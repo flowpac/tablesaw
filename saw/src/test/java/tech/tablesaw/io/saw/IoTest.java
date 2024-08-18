@@ -16,26 +16,26 @@ public class IoTest {
       ints[i] = i;
     }
 
-    RandomAccessFile memoryMappedFile = new RandomAccessFile("largeFile", "rw");
+    try (RandomAccessFile memoryMappedFile = new RandomAccessFile("testoutput/largeFile", "rw")) {
 
-    // Mapping a file into memory
+      // Mapping a file into memory
 
-    MappedByteBuffer out =
-        memoryMappedFile.getChannel().map(FileChannel.MapMode.READ_WRITE, 0, count * 4L);
-    Stopwatch stopwatch = Stopwatch.createStarted();
-    // Writing into Memory Mapped File
-    for (int i = 0; i < count; i++) {
-      out.putInt(ints[i]);
+      MappedByteBuffer out =
+          memoryMappedFile.getChannel().map(FileChannel.MapMode.READ_WRITE, 0, count * 4L);
+      var stopwatch = Stopwatch.createStarted();
+      // Writing into Memory Mapped File
+      for (int i = 0; i < count; i++) {
+        out.putInt(ints[i]);
+      }
+      out.force();
+      System.out.println(
+          "Writing to Memory Mapped File is completed " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
+
+      // reading from memory file in Java
+      for (int i = 0; i < 16; i++) {
+        System.out.println(out.getInt(i * 4));
+      }
     }
-    out.force();
-    System.out.println(
-        "Writing to Memory Mapped File is completed " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
-
-    // reading from memory file in Java
-    for (int i = 0; i < 16; i++) {
-      System.out.println(out.getInt(i * 4));
-    }
-
     System.out.println("Reading from Memory Mapped File is completed");
   }
 }
