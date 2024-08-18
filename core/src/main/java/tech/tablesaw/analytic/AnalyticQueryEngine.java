@@ -26,7 +26,7 @@ final class AnalyticQueryEngine {
     this.query = query;
     this.destination = Table.create("Analytic ~ " + query.getTable().name());
     Optional<Sort> sort = query.getSort();
-    this.rowComparator = sort.isPresent() ? SortUtils.getChain(query.getTable(), sort.get()) : null;
+    this.rowComparator = sort.map(key -> SortUtils.getChain(query.getTable(), key)).orElse(null);
   }
 
   /** Returns a new AnalyticQueryEngine to execute the given query */
