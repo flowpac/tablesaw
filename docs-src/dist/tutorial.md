@@ -5,6 +5,7 @@
 Tablesaw is a large library. We'll use Tablesaw to look at data about Tornadoes. If you haven't already done so,
 we strongly recommend that you read the Getting Started guide, before continuing here. 
 
+The code can be found in the core project, in the test folder under tech/tablesaw/examples/TornadoExample
 ## Exploring Tornadoes 
 
 To give a better sense of how Tablesaw works, we’ll use a tornado data set from NOAA. Here’s what we’ll cover:
@@ -47,7 +48,7 @@ The *shape()* method displays the row and column counts:
 ```java
 tornadoes.shape()
 
-59945 rows X 11 cols
+tornadoes_1950-2014.csv: 59945 rows X 11 cols
 ```
 
 *structure()* shows the index, name and type of each column
@@ -153,7 +154,7 @@ tornadoes.column("Fatalities").summary().print()
          Column: Fatalities         
  Measure   |         Value         |
 ------------------------------------
-        n  |                59945  |
+    Count  |                59945  |
       sum  |                 6802  |
      Mean  |  0.11347068145800349  |
       Min  |                    0  |
@@ -177,7 +178,7 @@ result =
             .isGreaterThan(300) // 300 yards
             .or(result.doubleColumn("Length").isGreaterThan(10))); // 10 miles
 
-result = result.select("State", "Date");
+result = result.selectColumns("State", "Date");
 
 
 tornadoes_1950-2014.csv 
@@ -323,4 +324,4 @@ To save a table, you can write it as a CSV file:
 tornadoes.write().csv("rev_tornadoes_1950-2014.csv");
 ```
 
-And that’s it for the introduction. Please see the User Guide for more information.
+And that’s it. Please see the User Guide for more information.
