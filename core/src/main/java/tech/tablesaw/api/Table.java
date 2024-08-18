@@ -69,6 +69,7 @@ public class Table extends Relation implements Iterable<Row> {
 
   /** The columns that hold the data in this table */
   private final List<Column<?>> columnList = new ArrayList<>();
+
   /** The name of the table */
   private String name;
 
@@ -113,7 +114,7 @@ public class Table extends Relation implements Iterable<Row> {
   /** TODO: Add documentation */
   private static void autoRegisterReadersAndWriters() {
     try (ScanResult scanResult =
-        new ClassGraph().enableAllInfo().whitelistPackages("tech.tablesaw.io").scan()) {
+        new ClassGraph().enableAllInfo().acceptPackages("tech.tablesaw.io").scan()) {
       List<String> classes = new ArrayList<>();
       classes.addAll(scanResult.getClassesImplementing(DataWriter.class.getName()).getNames());
       classes.addAll(scanResult.getClassesImplementing(DataReader.class.getName()).getNames());

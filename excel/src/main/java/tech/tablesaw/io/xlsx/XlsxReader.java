@@ -96,7 +96,7 @@ public class XlsxReader implements DataReader<XlsxReadOptions> {
     }
     // since no specific sheetIndex asked, return first table
     return tables.stream()
-        .filter(t -> t != null)
+        .filter(Objects::nonNull)
         .findFirst()
         .orElseThrow(() -> new IllegalArgumentException("No tables found."));
   }
