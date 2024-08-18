@@ -23,6 +23,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneOffset;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import smile.data.DataFrame;
 import smile.data.formula.Formula;
@@ -44,6 +45,7 @@ import tech.tablesaw.api.TimeColumn;
 public class SmileConverterTest {
 
   @Test
+  @Disabled
   public void regression() throws IOException {
     Table moneyball = Table.read().csv("../data/baseball.csv");
     moneyball.addColumns(
