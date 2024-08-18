@@ -1,6 +1,8 @@
 package tech.tablesaw.columns.temporal;
 
-import static tech.tablesaw.columns.temporal.TemporalPredicates.*;
+import static tech.tablesaw.columns.temporal.TemporalPredicates.isEqualTo;
+import static tech.tablesaw.columns.temporal.TemporalPredicates.isGreaterThan;
+import static tech.tablesaw.columns.temporal.TemporalPredicates.isLessThan;
 
 import java.time.Instant;
 import java.time.temporal.Temporal;

@@ -2,7 +2,13 @@ package tech.tablesaw.api;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import it.unimi.dsi.fastutil.floats.*;
+import it.unimi.dsi.fastutil.floats.FloatArrayList;
+import it.unimi.dsi.fastutil.floats.FloatArrays;
+import it.unimi.dsi.fastutil.floats.FloatComparators;
+import it.unimi.dsi.fastutil.floats.FloatListIterator;
+import it.unimi.dsi.fastutil.floats.FloatOpenHashSet;
+import it.unimi.dsi.fastutil.floats.FloatRBTreeSet;
+import it.unimi.dsi.fastutil.floats.FloatSet;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
 import java.util.Iterator;

@@ -1,6 +1,6 @@
 package tech.tablesaw.io;
 
-import static tech.tablesaw.api.ColumnType.*;
+import static tech.tablesaw.api.ColumnType.SKIP;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
@@ -17,7 +17,8 @@ import java.util.Optional;
 import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tech.tablesaw.api.*;
+import tech.tablesaw.api.ColumnType;
+import tech.tablesaw.api.Table;
 import tech.tablesaw.columns.AbstractColumnParser;
 import tech.tablesaw.columns.Column;
 

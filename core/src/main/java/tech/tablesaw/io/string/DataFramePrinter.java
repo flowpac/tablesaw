@@ -139,9 +139,7 @@ public class DataFramePrinter {
       }
       final String headerLine = String.format(headerTemplate, (Object[]) headers);
       text.append(headerLine).append(System.lineSeparator());
-      for (int j = 0; j < totalWidth; j++) {
-        text.append("-");
-      }
+      text.append("-".repeat(Math.max(0, totalWidth)));
       for (String[] row : data) {
         final String dataLine = String.format(dataTemplate, (Object[]) row);
         text.append(System.lineSeparator());
@@ -174,10 +172,7 @@ public class DataFramePrinter {
     final int colCount = frame.columnCount();
     final String[] header = new String[colCount];
     IntStream.range(0, colCount)
-        .forEach(
-            colIndex -> {
-              header[colIndex] = frame.column(colIndex).name();
-            });
+        .forEach(colIndex -> header[colIndex] = frame.column(colIndex).name());
     return header;
   }
 

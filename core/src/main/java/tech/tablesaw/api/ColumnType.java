@@ -25,7 +25,7 @@ import tech.tablesaw.io.ReadOptions;
  */
 public interface ColumnType {
 
-  final Map<String, ColumnType> values = new HashMap<>();
+  Map<String, ColumnType> values = new HashMap<>();
 
   // standard column types
   ShortColumnType SHORT = ShortColumnType.instance();

@@ -32,9 +32,9 @@ public class TableBuildingUtils {
       table.addColumns(types[i].create(columnNames.get(i)));
     }
 
-    for (int i = 0; i < dataRows.size(); i++) {
+    for (String[] dataRow : dataRows) {
       for (int j = 0; j < table.columnCount(); j++) {
-        table.column(j).appendCell(dataRows.get(i)[j]);
+        table.column(j).appendCell(dataRow[j]);
       }
     }
 

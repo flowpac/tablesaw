@@ -8,16 +8,40 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import tech.tablesaw.api.*;
+import tech.tablesaw.api.BooleanColumn;
+import tech.tablesaw.api.ColumnType;
+import tech.tablesaw.api.DateColumn;
+import tech.tablesaw.api.DateTimeColumn;
+import tech.tablesaw.api.DoubleColumn;
+import tech.tablesaw.api.FloatColumn;
+import tech.tablesaw.api.InstantColumn;
+import tech.tablesaw.api.IntColumn;
+import tech.tablesaw.api.LongColumn;
+import tech.tablesaw.api.Row;
+import tech.tablesaw.api.ShortColumn;
+import tech.tablesaw.api.StringColumn;
+import tech.tablesaw.api.Table;
+import tech.tablesaw.api.TimeColumn;
 import tech.tablesaw.columns.Column;
 import tech.tablesaw.columns.booleans.BooleanColumnType;
 import tech.tablesaw.columns.dates.DateColumnType;
 import tech.tablesaw.columns.datetimes.DateTimeColumnType;
 import tech.tablesaw.columns.instant.InstantColumnType;
-import tech.tablesaw.columns.numbers.*;
+import tech.tablesaw.columns.numbers.DoubleColumnType;
+import tech.tablesaw.columns.numbers.FloatColumnType;
+import tech.tablesaw.columns.numbers.IntColumnType;
+import tech.tablesaw.columns.numbers.LongColumnType;
+import tech.tablesaw.columns.numbers.ShortColumnType;
 import tech.tablesaw.columns.strings.StringColumnType;
 import tech.tablesaw.columns.times.TimeColumnType;
-import tech.tablesaw.index.*;
+import tech.tablesaw.index.ByteIndex;
+import tech.tablesaw.index.DoubleIndex;
+import tech.tablesaw.index.FloatIndex;
+import tech.tablesaw.index.Index;
+import tech.tablesaw.index.IntIndex;
+import tech.tablesaw.index.LongIndex;
+import tech.tablesaw.index.ShortIndex;
+import tech.tablesaw.index.StringIndex;
 import tech.tablesaw.selection.Selection;
 
 /** Implements joins between two or more Tables */
@@ -307,6 +331,7 @@ public class CrossProductJoin implements JoinStrategy {
               + valueColumn.type());
     }
   }
+
   /**
    * Create a big multicolumn selection for all join columns in the given table. Joins two tables.
    *

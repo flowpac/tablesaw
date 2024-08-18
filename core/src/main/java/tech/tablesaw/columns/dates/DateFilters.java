@@ -1,6 +1,10 @@
 package tech.tablesaw.columns.dates;
 
-import static tech.tablesaw.columns.DateAndTimePredicates.*;
+import static tech.tablesaw.columns.DateAndTimePredicates.isEqualTo;
+import static tech.tablesaw.columns.DateAndTimePredicates.isGreaterThanOrEqualTo;
+import static tech.tablesaw.columns.DateAndTimePredicates.isMissing;
+import static tech.tablesaw.columns.DateAndTimePredicates.isNotEqualTo;
+import static tech.tablesaw.columns.DateAndTimePredicates.isNotMissing;
 
 import it.unimi.dsi.fastutil.ints.IntIterator;
 import java.time.LocalDate;

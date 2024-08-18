@@ -60,7 +60,7 @@ public class StringPredicates {
 
   public static final Predicate<String> isNumeric = StringUtils::isNumeric;
 
-  public static final Predicate<String> isEmpty = e -> e.length() == 0;
+  public static final Predicate<String> isEmpty = String::isEmpty;
 
   public static final BiPredicate<String, Integer> isLongerThan =
       (valueToTest, valueToCompareAgainst) -> valueToTest.length() > valueToCompareAgainst;

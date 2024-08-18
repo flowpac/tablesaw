@@ -3,9 +3,12 @@ package tech.tablesaw.joining;
 import static tech.tablesaw.joining.JoinType.INNER;
 
 import com.google.common.base.Preconditions;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
-import tech.tablesaw.api.*;
+import tech.tablesaw.api.Table;
 
 /** Implements joins between two or more Tables */
 public class DataFrameJoiner extends AbstractJoiner {

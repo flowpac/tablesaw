@@ -15,17 +15,29 @@
 package tech.tablesaw.api;
 
 import static com.google.common.base.Preconditions.checkArgument;
-import static tech.tablesaw.api.ColumnType.*;
+import static tech.tablesaw.api.ColumnType.STRING;
 
 import com.google.common.base.Preconditions;
 import it.unimi.dsi.fastutil.ints.IntComparator;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import tech.tablesaw.columns.AbstractColumn;
 import tech.tablesaw.columns.AbstractColumnParser;
 import tech.tablesaw.columns.Column;
-import tech.tablesaw.columns.strings.*;
+import tech.tablesaw.columns.strings.ByteDictionaryMap;
+import tech.tablesaw.columns.strings.DictionaryMap;
+import tech.tablesaw.columns.strings.NoKeysAvailableException;
+import tech.tablesaw.columns.strings.StringColumnFormatter;
+import tech.tablesaw.columns.strings.StringColumnType;
+import tech.tablesaw.columns.strings.StringFilters;
+import tech.tablesaw.columns.strings.StringMapFunctions;
+import tech.tablesaw.columns.strings.StringReduceUtils;
 import tech.tablesaw.selection.BitmapBackedSelection;
 import tech.tablesaw.selection.Selection;
 
@@ -153,6 +165,7 @@ public class StringColumn extends AbstractColumn<StringColumn, String>
   public StringColumnFormatter getPrintFormatter() {
     return printFormatter;
   }
+
   /** {@inheritDoc} */
   @Override
   public boolean isMissing(int rowNumber) {

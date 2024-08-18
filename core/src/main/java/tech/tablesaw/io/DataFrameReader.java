@@ -60,7 +60,7 @@ public class DataFrameReader {
     try {
       connection = url.openConnection();
     } catch (IOException e) {
-      e.printStackTrace();
+      throw new RuntimeException(e);
     }
     String contentType = connection.getContentType();
     return url(url, getCharset(contentType), getMimeType(contentType));
@@ -114,11 +114,12 @@ public class DataFrameReader {
    * non-default options
    */
   public Table string(String s, String fileExtension) {
-    Optional<DataReader<?>> reader = registry.getReaderForExtension(fileExtension);
-    if (!reader.isPresent()) {
-      throw new IllegalArgumentException("No reader registered for extension " + fileExtension);
-    }
-    return reader.get().read(Source.fromString(s));
+    return registry
+        .getReaderForExtension(fileExtension)
+        .orElseThrow(
+            () ->
+                new IllegalArgumentException("No reader registered for extension " + fileExtension))
+        .read(Source.fromString(s));
   }
 
   /**
@@ -134,7 +135,7 @@ public class DataFrameReader {
    * file extension Use {@link #usingOptions(ReadOptions) usingOptions} to use non-default options
    */
   public Table file(File file) {
-    String extension = null;
+    String extension;
     try {
       extension = Files.getFileExtension(file.getCanonicalPath());
       Optional<DataReader<?>> reader = registry.getReaderForExtension(extension);

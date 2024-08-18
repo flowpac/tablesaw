@@ -25,7 +25,12 @@ import javax.annotation.concurrent.Immutable;
 import org.apache.commons.math3.util.Pair;
 import tech.tablesaw.api.ColumnType;
 import tech.tablesaw.api.Table;
-import tech.tablesaw.io.*;
+import tech.tablesaw.io.DataReader;
+import tech.tablesaw.io.FileReader;
+import tech.tablesaw.io.ReadOptions;
+import tech.tablesaw.io.ReaderRegistry;
+import tech.tablesaw.io.RuntimeIOException;
+import tech.tablesaw.io.Source;
 
 @Immutable
 public class CsvReader extends FileReader implements DataReader<CsvReadOptions> {

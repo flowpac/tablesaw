@@ -1,6 +1,23 @@
 package tech.tablesaw.api;
 
-import static tech.tablesaw.aggregate.AggregateFunctions.*;
+import static tech.tablesaw.aggregate.AggregateFunctions.geometricMean;
+import static tech.tablesaw.aggregate.AggregateFunctions.kurtosis;
+import static tech.tablesaw.aggregate.AggregateFunctions.max;
+import static tech.tablesaw.aggregate.AggregateFunctions.mean;
+import static tech.tablesaw.aggregate.AggregateFunctions.median;
+import static tech.tablesaw.aggregate.AggregateFunctions.min;
+import static tech.tablesaw.aggregate.AggregateFunctions.populationVariance;
+import static tech.tablesaw.aggregate.AggregateFunctions.product;
+import static tech.tablesaw.aggregate.AggregateFunctions.quadraticMean;
+import static tech.tablesaw.aggregate.AggregateFunctions.quartile1;
+import static tech.tablesaw.aggregate.AggregateFunctions.quartile3;
+import static tech.tablesaw.aggregate.AggregateFunctions.range;
+import static tech.tablesaw.aggregate.AggregateFunctions.skewness;
+import static tech.tablesaw.aggregate.AggregateFunctions.stdDev;
+import static tech.tablesaw.aggregate.AggregateFunctions.sum;
+import static tech.tablesaw.aggregate.AggregateFunctions.sumOfLogs;
+import static tech.tablesaw.aggregate.AggregateFunctions.sumOfSquares;
+import static tech.tablesaw.aggregate.AggregateFunctions.variance;
 import static tech.tablesaw.columns.numbers.NumberPredicates.isMissing;
 import static tech.tablesaw.columns.numbers.NumberPredicates.isNotMissing;
 
@@ -19,7 +36,12 @@ import org.apache.commons.math3.stat.correlation.SpearmansCorrelation;
 import tech.tablesaw.aggregate.AggregateFunctions;
 import tech.tablesaw.aggregate.NumericAggregateFunction;
 import tech.tablesaw.columns.Column;
-import tech.tablesaw.columns.numbers.*;
+import tech.tablesaw.columns.numbers.NumberColumnFormatter;
+import tech.tablesaw.columns.numbers.NumberFilters;
+import tech.tablesaw.columns.numbers.NumberInterpolator;
+import tech.tablesaw.columns.numbers.NumberMapFunctions;
+import tech.tablesaw.columns.numbers.NumberRollingColumn;
+import tech.tablesaw.columns.numbers.Stats;
 import tech.tablesaw.selection.BitmapBackedSelection;
 import tech.tablesaw.selection.Selection;
 

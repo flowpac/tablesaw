@@ -1,6 +1,8 @@
 package tech.tablesaw.columns.booleans;
 
-import static tech.tablesaw.columns.booleans.BooleanColumnType.*;
+import static tech.tablesaw.columns.booleans.BooleanColumnType.BYTE_FALSE;
+import static tech.tablesaw.columns.booleans.BooleanColumnType.BYTE_TRUE;
+import static tech.tablesaw.columns.booleans.BooleanColumnType.MISSING_VALUE;
 
 import it.unimi.dsi.fastutil.bytes.ByteArrayList;
 import it.unimi.dsi.fastutil.bytes.ByteIterator;
